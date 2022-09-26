@@ -1,7 +1,12 @@
 from tkinter import *
 from tkinter import messagebox
 
+#---------------- USER E PASSWORD --------------------
 
+user_name = 'diego'
+password_login = '123456'
+
+#------------ TELA LOGIN --------------------
 tela_login = Tk()
 tela_login.resizable(width=False, height=False)
 bg = PhotoImage(file='fundo.PNG')
@@ -24,12 +29,20 @@ password_img = canvas1.create_text(165, 295, text='🔐', fill='#FFFFFF', font=(
 password_entry = Entry(tela_login, font=('Tahoma', 20), show='•')
 password_entry.place(x=50, y=330, height=35, width=350)
 
+#-------------- FUNÇÃO LOGIN ------------------------
+
+def login():
+    if user_entry.get() == user_name and password_entry.get() == password_login:
+        messagebox.showinfo(title='Aviso!', message='Login efetuado com sucesso!')
+    elif user_entry.get() != user_name or password_entry.get() != password_login:
+        messagebox.showerror(title='ERROR', message='Usuário ou senha incorreta!')
+
 #--------------------- Botões -----------------------------
 
-bt1 = Button(tela_login, text='Entrar', font=('Tahoma', 15, 'bold'), background='#191970', foreground='#FFFFFF')
+bt1 = Button(tela_login, text='Entrar', font=('Tahoma', 15, 'bold'), background='#191970', foreground='#FFFFFF', command=login)
 bt1.place(x=120, y=400, width=90, height=35)
 
-bt2 = Button(tela_login, text='Sair', font=('Tahoma', 15, 'bold'), background='#191970', foreground='#FFFFFF')
+bt2 = Button(tela_login, text='Sair', font=('Tahoma', 15, 'bold'), background='#191970', foreground='#FFFFFF', command=tela_login.destroy)
 bt2.place(x=250, y=400, width=90, height=35)
 #--------------------- RODAPÉ -----------------------------
 
