@@ -32,9 +32,9 @@ password_entry.place(x=50, y=330, height=35, width=350)
 #-------------- FUNÇÃO LOGIN ------------------------
 
 def login():
-    if user_entry.get() == user_name and password_entry.get() == password_login:
+    if user_entry.get().lower() == user_name and password_entry.get() == password_login:
         messagebox.showinfo(title='Aviso!', message='Login efetuado com sucesso!')
-    elif user_entry.get() != user_name or password_entry.get() != password_login:
+    elif user_entry.get().lower() != user_name or password_entry.get() != password_login:
         messagebox.showerror(title='ERROR', message='Usuário ou senha incorreta!')
 
 #--------------------- Botões -----------------------------
