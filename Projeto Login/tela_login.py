@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import tela_cadastro
 
 #---------------- USER E PASSWORD --------------------
 
@@ -34,6 +35,8 @@ password_entry.place(x=50, y=330, height=35, width=350)
 def login():
     if user_entry.get().lower().strip() == user_name and password_entry.get() == password_login:
         messagebox.showinfo(title='Aviso!', message='Login efetuado com sucesso!')
+        tela_cadastro.tela_cadastro()
+
     elif user_entry.get().lower().strip() != user_name or password_entry.get() != password_login:
         messagebox.showerror(title='ERROR', message='Usuário ou senha incorreta!')
 
